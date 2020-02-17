@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 website_names = "" # здесь названия всех вебстраниц
 
+@app.route("/")
+def index():
+	return render_template("index.html")
+
 @app.route("/search", methods=[GET, POST])
 def search():
 	search = request.form["search"]
